@@ -1,24 +1,2 @@
-pipeline
-{
-  agent any
-  stages
-  {
-    stage('Buzz Buzz')
-    {
-      steps
-      {
-        echo 'Bees Buzz!'
-      }
-    }
-
-    stage('Bees Bees Bees')
-    {
-      steps
-      {
-        echo 'Buzz, Bees, Buzz!'
-        echo 'Bees Buzzing!'
-      }
-    }
-
-  }
-  }
+stdout: my_string = "Hello, World!" 
+print(my_string) 
