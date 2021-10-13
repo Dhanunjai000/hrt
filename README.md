@@ -1,2 +1,2 @@
-stdout: my_string = "Hello, World!" 
+stdout: my_strin = "Hello, World!" 
 print(my_string) 
