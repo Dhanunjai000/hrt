@@ -1,2 +1,4 @@
-stdout: my_strin = "Hello, World!" 
-print(my_string) 
+date
+df -h
+time
+
