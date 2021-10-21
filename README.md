@@ -1,7 +1,7 @@
 pipeline {
     agent any
-             image 'maven:3.8.3-adoptopenjdk-1.8.0'
-             args '-v /root/.m2:/root/.m2'
+             img 'maven:3.8.3-adoptopenjdk-1.8.0'
+             arg '-v /root/.m2:/root/.m2'
     stages {
         stage('sorry') {
             steps {
