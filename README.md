@@ -1,8 +1,7 @@
 pipeline {
-   agent { 
-    node  {
-      lable 'docker'
-      }
+   agent any { 
+   stages(docker){
+       stage(Build)
     }
     options {
          timestamps()
@@ -13,3 +12,4 @@ pipeline {
        VERSION = readMavenPom().getVersion()
     }
   }
+}
