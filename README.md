@@ -1,21 +1,25 @@
-//Jenkinspipeline (Declarative Pipeline)
-pipeline{
-   agent any
-   stages{
-      stage('Build'){
-         steps{
-            echo 'Building...'
+pipeline {
+     agent any
+     stages ('Compile Stage') {
+        steps {
+             withMaven(maven : 'apache-maven-3.8.3') {
+                bat 'mvn clean compile'
+              }
             }
           }
-          stage('Test'){
-             steps{
-                echo 'Testing...'
-             }
-           }
-           stage('Deploy'){
-              steps {
-                 echo 'Deploying...'
-                 }
+          stage ('Testing Stage') {
+             steps {
+                 withMaven(maven : 'apache-maven-3.8.3') {
+                     bat 'mvn test'
+                  }
                 }
                }
+               stage ('Install Stage') {
+                  steps {
+                      withMaven(maven : 'apache-maven-3.8.3') {
+                          bat 'mvn install'
+                      }
+                    }
+                  }
+                }
               }
