@@ -3,7 +3,7 @@ pipeline {
      stages {
          stage('Compile Stage') {
              steps {
-             withmaven(maven : 'apache-maven-3.8.3') {
+             withMaven(maven : 'apache-maven-3.8.3') {
                 sh 'mvn clean compile'
               }
             }
