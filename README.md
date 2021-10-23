@@ -1,15 +1,21 @@
-pipeline {
-   agentany { 
-   stages(docker){
-       stage(Build)
-    }
-    options {
-         timestamps()
-    }
-    
-    environment  {
-       IMAGE = readMavenPom().getArtifactId()
-       VERSION = readMavenPom().getVersion()
-    }
-  }
-}
+Jenkinspipeline (Declarative Pipeline)
+pipeline{
+   agent any
+   stages{
+      stage('Build'){
+         steps{
+            echo 'Building...'
+            }
+          }
+          stage('Test'){
+             steps{
+                echo 'Testing...'
+             }
+           }
+           stage('Deploy'){
+              steps {
+                 echo 'Deploying...'
+                 }
+                }
+               }
+              }
