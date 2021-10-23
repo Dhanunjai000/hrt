@@ -3,21 +3,21 @@ pipeline {
      stages {
          stage('Compile Stage') {
              steps {
-             agent (maven : 'apache-maven-3.5.0') {
+             withmaven(maven : 'apache-maven-3.8.3') {
                 sh 'mvn clean compile'
               }
             }
           }
           stage('Testing Stage') {
              steps {
-                 agent (maven : 'apache-maven-3.5.0') {
+                 withmaven(maven : 'apache-maven-3.8.3') {
                      sh 'mvn test'
                   }
                 }
                }
                stage('Install Stage') {
                   steps {
-                      agent (maven : 'apache-maven-3.5.0') {
+                      withMaven(maven : 'apache-maven-3.8.3') {
                           sh 'mvn install'
                       }
                     }
