@@ -1,20 +1,20 @@
 pipeline {
      agent any
-     stages ('Compile Stage') {
+     stage('Compile Stage') {
         steps {
              withMaven(maven : 'apache-maven-3.8.3') {
                 bat 'mvn clean compile'
               }
             }
           }
-          stages('Testing Stage') {
+          stage('Testing Stage') {
              steps {
                  withMaven(maven : 'apache-maven-3.8.3') {
                      bat 'mvn test'
                   }
                 }
                }
-               stages('Install Stage') {
+               stage('Install Stage') {
                   steps {
                       withMaven(maven : 'apache-maven-3.8.3') {
                           bat 'mvn install'
