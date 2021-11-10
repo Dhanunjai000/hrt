@@ -1,26 +1,7 @@
-pipeline {
-     agent any
-     stages {
-         stage('Compile Stage') {
-             steps {
-             withMaven(maven : 'apache-maven-3.8.3') {
-                sh 'mvn clean compile'
-              }
-            }
-          }
-          stage('Testing Stage') {
-             steps {
-                 withMaven(maven : 'apache-maven-3.8.3') {
-                     sh 'mvn test'
-                  }
-                }
-               }
-               stage('Install Stage') {
-                  steps {
-                      withMaven(maven : 'apache-maven-3.8.3') {
-                          sh 'mvn install'
-                      }
-                    }
-                  }
-                }
-              }
+echo "# chin" >> README.md
+git init
+git add README.md
+git commit -m "first commit"
+git branch -M main
+git remote add origin git@github.com:Dhanunjai000/chin.git
+git push -u origin main
